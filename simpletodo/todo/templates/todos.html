@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="columns is-12">
-    <h1 class="title">Todos</h1>
+<div class="colums is-miltiline">
+    <div class="columns is-12">
+        <h1 class="title">Todos</h1>
+    </div>
+
+    <hr>
+
+    <div class="column is-12">
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
