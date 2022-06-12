@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="colums is-miltiline">
+    <div class="columns is-12">
+        <h1 class="title">Todos</h1>
+    </div>
+
+    <div class="colums is-12">
+        <strong>Is Done: </strong> {{ todo.is_done }}</strong><br>
+        <strong>Description: </strong>{{ todo.description }}
+    </div>
+
+    {% if not todo.is_done %}
+        <div class="column is-12">
+            <a href="{% url 'todo' todo.id %}?change_status=done">Mark as done</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

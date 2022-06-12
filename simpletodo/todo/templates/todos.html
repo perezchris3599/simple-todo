@@ -21,5 +21,16 @@
             </div>
         </form>
     </div>
+
+    <hr>
+
+    <div class="column is-12">
+        {% for todo in todos %}
+            <p>{{ todo.title }} (Is done: {{ todo.is_done}}) <a href="{% url 'todo' todo.id %}">View details</a></p>
+        {% empty %}
+            <p>You dont have any todos yet..</p>
+        {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
